@@ -87,17 +87,17 @@ if [ ! -f $ROOTFS/usr/bin/X ];then
 	rm -rf iso/updates/root/Masaüstü
 fi
 
-echo "milis-2.0-B${month}.${day}" > ./iso/updates/etc/milis-surum
+echo "Aylinux-2021-${month}.${day}" > ./iso/updates/etc/milis-surum
 echo "Iso dosyası hazırlanıyor..."
 #cp $ROOTFS/usr/lib/syslinux/isohdpfx.bin iso/boot/isolinux/isohdpfx.bin
 xorriso -as mkisofs \
 -iso-level 3 -rock -joliet \
 -max-iso9660-filenames -omit-period \
 -omit-version-number -relaxed-filenames -allow-lowercase \
--volid "MILIS_CALISAN" \
+-volid "AYLINUX" \
 -eltorito-boot boot/isolinux/isolinux.bin \
 -eltorito-catalog boot/isolinux/isolinux.cat \
 -no-emul-boot -boot-load-size 4 -boot-info-table \
 -eltorito-alt-boot -e efiboot.img -isohybrid-gpt-basdat -no-emul-boot \
 -isohybrid-mbr iso/boot/isolinux/isohdpfx.bin \
--output "milis-2.0-B${month}.${day}.iso" iso || echo "ISO imaj olusturalamadı";
+-output "Aylinux-2021-${month}.${day}.iso" iso || echo "ISO imaj olusturalamadı";
