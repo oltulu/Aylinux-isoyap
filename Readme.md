@@ -1,4 +1,4 @@
-### Milis Linux 2.0 Hızlı İmaj Oluşturucu ###
+### Aylinux Linux 2.0 Hızlı İmaj Oluşturucu ###
 
 1- Sistem dizini (rootfs) altındaki /etc/sysconfig/rc.site içinde
 gerekli değişkenleri ayarlayınız.
