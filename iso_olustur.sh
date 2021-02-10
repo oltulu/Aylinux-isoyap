@@ -49,7 +49,7 @@ fi
 #
 mkdir -p tmp/LiveOS
 fallocate -l 8G tmp/LiveOS/rootfs.img
-mke2fs -t ext4 -L MILIS_CALISAN -F tmp/LiveOS/rootfs.img
+mke2fs -t ext4 -L AYLINUX_CALISAN -F tmp/LiveOS/rootfs.img
 mkdir -p temp-root
 mount -o loop tmp/LiveOS/rootfs.img temp-root
 echo "Chroot içerik dosya sistemi imajına kopyalanıyor..."
@@ -63,8 +63,8 @@ rm -rf tmp
 
 echo "Efi ayarları yapılıyor..."
 mkdir -p iso/efi_tmp
-dd if=/dev/zero bs=1M count=64 of=./iso/efiboot.img
-mkfs.vfat -n Milis_EFI ./iso/efiboot.img 
+dd if=/dev/zero bs=2M count=64 of=./iso/efiboot.img
+mkfs.vfat -n AYLINUX_EFI ./iso/efiboot.img 
 
 mount -o loop ./iso/efiboot.img ./iso/efi_tmp
 cp -rf ./iso/boot/kernel ./iso/efi_tmp/
