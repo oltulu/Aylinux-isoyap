@@ -1,0 +1,9 @@
+[Desktop Entry]
+Path=/opt/Aylinux-Yukleyici
+Name=Aylinux Kurulumu
+Comment=Aylinux Kurulumu
+Exec=python3 /opt/Aylinux-Yukleyici/kur.py
+Terminal=false
+Type=Application
+Icon=/opt/Aylinux-Yukleyici/resimler/icon.svg
+Categories=System;
