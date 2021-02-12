@@ -28,7 +28,7 @@ if [ -d iso ];then
 	rm -fv iso/boot/initrd*
 	rm -fv iso/efiboot.img
 	rm -rfv iso/LiveOS
-	rm -rvf $ROOTFS/var/cache/mps/depo/*.mps.lz
+	rm -rvf $ROOTFS/var/cache/mps/depo/*.kur
 fi
 
 echo "Güncel kernel ve initramfs kopyalanıyor..."
