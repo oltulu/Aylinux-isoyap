@@ -83,11 +83,11 @@ cp -rf updates ./iso/
 
 # minimal imajda görsel kurucunun silinmesi
 if [ ! -f $ROOTFS/usr/bin/X ];then
-	rm -rf iso/updates/opt/Milis-Yukleyici
+	rm -rf iso/updates/opt/Aylinux-Yukleyici
 	rm -rf iso/updates/root/Masaüstü
 fi
 
-echo "Aylinux-2021-${month}.${day}" > ./iso/updates/etc/milis-surum
+echo "Aylinux-2021-${month}.${day}" > ./iso/updates/etc/aylinux-surum
 echo "Iso dosyası hazırlanıyor..."
 #cp $ROOTFS/usr/lib/syslinux/isohdpfx.bin iso/boot/isolinux/isohdpfx.bin
 xorriso -as mkisofs \
