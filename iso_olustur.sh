@@ -24,7 +24,7 @@ hata_olustu(){
 
 # temizlik
 if [ -d iso ];then
-	rm -fv iso/boot/kernel*
+	rm -fv iso/boot/cekirdek*
 	rm -fv iso/boot/initrd*
 	rm -fv iso/efiboot.img
 	rm -rfv iso/LiveOS
@@ -33,7 +33,7 @@ fi
 
 echo "Güncel kernel ve initramfs kopyalanıyor..."
 kversion=`ls $ROOTFS/boot/kernel-* | xargs -I {} basename {} | head -n1 |cut -d'-' -f2`
-cp -rvf $ROOTFS/boot/kernel-${kversion} iso/boot/kernel
+cp -rvf $ROOTFS/boot/kernel-${kversion} iso/boot/cekirdek
 #cp -rvf $ROOTFS/boot/initrd_live iso/boot/initrd-${kversion}
 cp -rvf $ROOTFS/boot/initrd_live iso/boot/initrd
 
@@ -67,7 +67,7 @@ dd if=/dev/zero bs=2M count=64 of=./iso/efiboot.img
 mkfs.vfat -n AYLINUX_EFI ./iso/efiboot.img 
 
 mount -o loop ./iso/efiboot.img ./iso/efi_tmp
-cp -rf ./iso/boot/kernel ./iso/efi_tmp/
+cp -rf ./iso/boot/cekirdek ./iso/efi_tmp/
 cp -rf ./iso/boot/initrd ./iso/efi_tmp/
 cp -rf ./efi/* ./iso/efi_tmp/
 
