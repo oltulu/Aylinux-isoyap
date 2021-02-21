@@ -86,7 +86,7 @@ if [ ! -f $ROOTFS/usr/bin/X ];then
 	rm -rf iso/updates/opt/Aylinux-Yukleyici
 	rm -rf iso/updates/root/Masaüstü
 fi
-
+chmod +x $ROOTFS/root/Masaüstü/kurulum.desktop
 echo "Aylinux-2021-${month}.${day}" > ./iso/updates/etc/aylinux-surum
 echo "Iso dosyası hazırlanıyor..."
 #cp $ROOTFS/usr/lib/syslinux/isohdpfx.bin iso/boot/isolinux/isohdpfx.bin
